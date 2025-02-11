@@ -26,7 +26,7 @@ function Viewed() {
     fetchData()
   }, [])
   return (
-    <div class="pl-4 pt-12 -mt-1">
+    <div className="pl-4 pt-12 -mt-1">
       <div className="overflow-x-auto w-full">
         <table className="table w-full bg-base-300 rounded-xl">
           <thead>

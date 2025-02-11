@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { themeChange } from 'theme-change'
 import { useSession } from 'next-auth/react'
+
 function Topbar() {
-  const { data: session, status } = useSession()
+  // const { data: session, status } = useSession()
   const themeValues = [
     // 'acid',
     // 'autumn',
@@ -32,12 +33,14 @@ function Topbar() {
     // 'wireframe',
     // 'winter',
   ]
+
   useEffect(() => {
     themeChange(false)
   }, [])
+
   return (
-    <div className=" pb-4  flex  items-center justify-between w-full">
-      {session ? (
+    <div className="pb-4 flex items-center justify-between w-full">
+      {/* {session ? ( */}
         <>
           <div className="flex items-center w-full">
             <input
@@ -49,11 +52,11 @@ function Topbar() {
           <div className="flex justify-end items-center space-x-4">
             <div>
               <div className="indicator group">
-                <span className="indicator-item badge badge-secondary group-hover:bg-opacity-0 group-hover:border-0 group-hover:text-opacity-0  transition-colors duration-300">
+                <span className="indicator-item badge badge-secondary group-hover:bg-opacity-0 group-hover:border-0 group-hover:text-opacity-0 transition-colors duration-300">
                   2
                 </span>
                 <svg
-                  className="w-8 h-8 hover:bg-primary rounded-full p-1  transition-colors duration-300 stroke-base-content hover:fill-primary hover:stroke-white"
+                  className="w-8 h-8 hover:bg-primary rounded-full p-1 transition-colors duration-300 stroke-base-content hover:fill-primary hover:stroke-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -66,13 +69,11 @@ function Topbar() {
                   />
                 </svg>
               </div>
-
-              {/* <span className="indicator-item badge badge-secondary"></span> */}
             </div>
             <div>
               <div className="indicator group">
                 <svg
-                  className="w-8 h-8 hover:bg-primary rounded-full p-1  transition-colors duration-300 stroke-base-content hover:fill-primary hover:stroke-white"
+                  className="w-8 h-8 hover:bg-primary rounded-full p-1 transition-colors duration-300 stroke-base-content hover:fill-primary hover:stroke-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -89,18 +90,18 @@ function Topbar() {
             </div>
           </div>
         </>
-      ) : (
+      {/* ) : (
         <> </>
-      )}
-      <div className=" flex justify-end">
+      )} */}
+      <div className="flex justify-end">
         <select className="select ml-4 select-ghost w-40" data-choose-theme>
-          <option className="text-base-content" option value="tallenttree">
+          <option className="text-base-content" value="tallenttree">
             Tallent Tree
           </option>
           {themeValues.map((value) => (
             <option
               className="text-base-content"
-              key={value.toLowerCase}
+              key={value.toLowerCase()}
               value={value.toLowerCase()}
             >
               {value}

@@ -9,7 +9,6 @@ function App({ Component, pageProps }) {
   }
 
   return (
-    <SessionProvider session={pageProps.session}>
       <>
         <div
           className="flex bg-base-100 bg-fixed bg-no-repeat	bg-origin-border bg-cover bg-center  "
@@ -28,7 +27,6 @@ function App({ Component, pageProps }) {
           </div>
         </div>
       </>
-    </SessionProvider>
   )
 }
 

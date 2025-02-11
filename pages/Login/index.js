@@ -5,11 +5,12 @@ import { useSession, signIn, signOut } from 'next-auth/react'
 import Dashboard from '../Dashboard'
 import { db } from '../../firebase/clientApp'
 function index() {
-  const { data: session, status } = useSession()
+  // const { data: session, status } = useSession()
 
-  if (session) {
+  // if (session) {
     return <Dashboard />
-  } else {
+  // }
+  //  else {
     return (
       <div className="relative flex py-40 text-base-content antialiased flex-col justify-center overflow-hidden ">
         <div className="relative py-3 sm:w-96 mx-auto text-center ">
@@ -39,15 +40,15 @@ function index() {
 
               <div className="flex flex-col items-baseline pt-4">
                 <div className="w-full flex space-x-4">
-                  <Link className="w-full" href="#">
-                    <button type="submit" class="btn-primary btn w-full ">
-                      Login
-                    </button>
-                  </Link>
-                  <Link href="/SignUp" class="text-sm w-full">
+                <Link className="w-full" href="#">
+                  <button type="submit" className="btn-primary btn w-full" onClick={() => signIn()}>
+                    Login
+                  </button>
+                </Link>
+                  <Link href="/SignUp" className="text-sm w-full">
                     <button
                       type="submit"
-                      class="btn btn-outline btn-primary w-full"
+                      className="btn btn-outline btn-primary w-full"
                     >
                       Sign up
                     </button>
@@ -55,7 +56,7 @@ function index() {
                 </div>
                 <Link
                   href="#"
-                  class="text-sm hover:underline text-base-content flex justify-center mx-auto my-auto items-center pt-8 -mb-4"
+                  className="text-sm hover:underline text-base-content flex justify-center mx-auto my-auto items-center pt-8 -mb-4"
                 >
                   Forgot password?
                 </Link>
@@ -64,7 +65,6 @@ function index() {
             <div className="divider"></div>
             <div className=" w-full  px-4 pb-4">
               <div
-                // onClick={signin}
                 onClick={() => signIn()}
                 className=" flex w-20 p-4 rounded-full items-center justify-center mx-auto hover:bg-primary-focus group transition-colors duration-300"
               >
@@ -102,6 +102,6 @@ function index() {
       </div>
     )
   }
-}
+// }
 
 export default index

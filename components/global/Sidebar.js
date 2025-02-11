@@ -3,12 +3,12 @@ import React from 'react'
 import { sidebar } from '../../data/config'
 import { useSession, signOut } from 'next-auth/react'
 const Sidebar = () => {
-  const { data: session, status } = useSession()
+  // const { data: session, status } = useSession()
   const current = new Date()
   const date = `${current.getDate()}/${
     current.getMonth() + 1
   }/${current.getFullYear()}`
-  if (session) {
+  // if (session) {
     return (
       <aside className="relative  w-72 h-screen  bg-neutral">
         <div className="pt-6 px-6 flex items-center space-x-4">
@@ -243,7 +243,7 @@ const Sidebar = () => {
             <div className=" flex bg-primary rounded-full w-12 h-12 aspect-square	">
               <div className="avatar online">
                 <img
-                  src={session.user.image}
+                  // src={session.user.image}
                   className="rounded-full w-12 h-12"
                 />
               </div>
@@ -251,10 +251,10 @@ const Sidebar = () => {
 
             <div className="flex flex-col justify-start space-y-1 my-auto ">
               <p className="text-sm font-bold text-neutral-content">
-                {session.user.name}
+                Name
               </p>
               <p className="text-xs text-neutral-content">
-                {session.user.email}
+                email
               </p>
             </div>
           </div>
@@ -264,7 +264,7 @@ const Sidebar = () => {
       </aside>
     )
   }
-}
+// }
 
 export default Sidebar
 

@@ -7,7 +7,7 @@ import DayView from '../../components/ui/calendar/DayView'
 import { useSession, signOut, getSession } from 'next-auth/react'
 import firebase from 'firebase/app'
 function Dashboard() {
-  const { data: session, status } = useSession()
+  // const { data: session, status } = useSession()
   const CreateUser = () => {
     try {
       firebase
@@ -31,7 +31,7 @@ function Dashboard() {
   CreateUser()
   return (
     <div>
-      <Header title="Dashboard" user={session.user.name} />
+      <Header title="Dashboard" user='user name' />
       <RowSkillCards />
       <div className="w-full">
         <h1 className="font-bold mb-4">Your activity</h1>
